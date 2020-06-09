@@ -1,17 +1,21 @@
 <template>
-  <div>
-    <Home></Home>
+  <div class="home">
+    test_test
   </div>
 </template>
 
 <script>
-import Home from '@/components/Home.vue';
+
 export default {
-  components: {
-    Home,
+  name: "home",
+  async mounted () {
+
   },
 }
 </script>
 
 <style lang="scss" scoped>
+.home {
+  color: deeppink;
+}
 </style>
