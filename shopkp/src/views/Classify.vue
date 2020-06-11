@@ -1,6 +1,6 @@
 <template>
   <div>
-    this is home
+    this is Classify
   </div>
 </template>
 
