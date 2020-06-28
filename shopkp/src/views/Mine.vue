@@ -1,12 +1,17 @@
 <template>
   <div>
-    this is Mine
+    <mine></mine>
   </div>
 </template>
 
 <script>
+import mine from '@/components/Mine';
+
 export default {
-  name: "home"
+  name: "home",
+  components: {
+    mine,
+  },
 }
 </script>
 

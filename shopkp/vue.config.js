@@ -21,7 +21,7 @@ module.exports = {
             },
             warnings: false,
           },
-          sourceMap: false,
+          sourceMap: true,
           parallel: true,//使用多进程并行运行来提高构建速度。默认并发运行数：os.cpus().length - 1。
         })
       );

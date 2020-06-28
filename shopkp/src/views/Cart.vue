@@ -1,12 +1,19 @@
 <template>
   <div>
-    this is Cart
+    <cart></cart>
   </div>
 </template>
 
 <script>
+
+import cart from '@/components/Cart';
+
+
 export default {
-  name: "home"
+  name: "spk-cart",
+  components: {
+    cart,
+  },
 }
 </script>
 

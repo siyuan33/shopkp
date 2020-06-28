@@ -1,42 +1,49 @@
 <template>
-  <tabbar>
-    <tab-content path="/home">
-      <img slot="icon" src="../../assets/img/tabbar/home.png" alt />
-      <img slot="activeicon" src="../../assets/img/tabbar/homered.png" alt />
-      <div slot="text">首页</div>
-    </tab-content>
-
-    <tab-content path="/classify">
-      <img slot="icon" src="../../assets/img/tabbar/fenlei.png" alt />
-      <img slot="activeicon" src="../../assets/img/tabbar/fenleired.png" alt />
-      <div slot="text">分类</div>
-    </tab-content>
-
-    <tab-content path="/cart">
-      <img slot="icon" src="../../assets/img/tabbar/gwc.png" alt />
-      <img slot="activeicon" src="../../assets/img/tabbar/gwcred.png" alt />
-      <div slot="text">购物车</div>
-    </tab-content>
-
-    <tab-content path="/mine">
-      <img slot="icon" src="../../assets/img/tabbar/me.png" alt />
-      <img slot="activeicon" src="../../assets/img/tabbar/mered.png" alt />
-      <div slot="text">我的</div>
-    </tab-content>
-  </tabbar>
+  <div class="spk-tabbar">
+    <div v-for="(item, index) in barList" :key="index">
+      <tab-content :path="item.path">
+        <img
+          slot="icon"
+          :src="require('@/assets/img/tabbar/' + item.icon)"
+          alt
+        />
+        <img
+          slot="activeicon"
+          :src="require('@/assets/img/tabbar/' + item.activeicon)"
+          alt
+        />
+        <div slot="text">{{ item.text }}</div>
+      </tab-content>
+    </div>
+  </div>
 </template>
 
 <script>
-import tabbar from './tab.vue'
 import tabContent from './tabContent.vue'
+import barList from './barList.js' // 将数据抽离到barList.js 中
+
 export default {
   name: 'maintabbar',
   components: {
-    tabbar,
     tabContent
-  }
+  },
+  data () {
+    return {
+      barList,
+    }
+  },
 }
 </script>
 
 <style lang="scss" scoped>
+.spk-tabbar {
+  display: flex;
+  background-color: #f6f6f6;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: 0 -2px 1px rgba(100, 100, 100, 0.1);
+  justify-content: space-around;
+}
 </style>

@@ -1,12 +1,19 @@
 <template>
   <div>
-    this is Classify
+    <classify></classify>
   </div>
 </template>
 
 <script>
+
+import classify from '@/components/Classify';
+
+
 export default {
-  name: "home"
+  name: "home",
+  components: {
+    classify,
+  },
 }
 </script>
 

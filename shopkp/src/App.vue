@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import tabContent from './components/tabBar/tabWrap.vue';
+import tabContent from './components/tabBar';
 
 export default {
   name: "app",
