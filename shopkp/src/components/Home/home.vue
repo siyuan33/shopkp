@@ -9,24 +9,29 @@
         <template v-slot:right> </template>
       </navigation>
     </header>
+    <carousel-list :carouselList="carouselList"></carousel-list>
   </div>
 </template>
 
 <script>
 import navigation from "../Navigation/index.js"
+import carouselList from './carouselList.vue';
 export default {
   name: 'spk-home-component',
   components: {
     navigation,
+    carouselList,
   },
   data () {
     return {
-
+      carouselList: [],
     }
   },
   async mounted () {
-    const { data } = await this.$http(this.$mainApi, "/home/multidata")
-    debugger
+    const { data: { success, data: d } } = await this.$http(this.$mainApi, "/home/multidata")
+    if (success === true) {
+      this.carouselList = d.banner.list
+    }
   },
 }
 </script>
